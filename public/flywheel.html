@@ -470,6 +470,29 @@
   .tier-cta:hover { opacity: 0.85; }
   .tier-cta-primary { background: var(--rose); color: white; }
 
+  .pricing-card-ai-callout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: rgba(44,44,44,0.04);
+    border-radius: 14px;
+    padding: 20px 22px;
+    border-left: 3px solid var(--gold);
+  }
+  .pricing-card-ai-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .pricing-card-ai-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .pricing-card-ai-desc {
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.55;
+    line-height: 1.6;
+  }
+
   /* STRATEGY SECTION */
   .strategy-section {
     padding: 80px 24px;
@@ -924,7 +947,7 @@
         <div class="pricing-card-right">
           <div class="pricing-card-includes-label">What's included</div>
           <ul class="tier-features">
-            <li class="tier-feature included">🗺️ Store Locator — all retailers (Ulta, Shoppers, Target, Amazon)</li>
+            <li class="tier-feature included">🗺️ Store Locator — Ulta, Ulta at Target, Shoppers Drug Mart, Amazon</li>
             <li class="tier-feature included">📱 SMS Opt-In + Branded Landing Pages</li>
             <li class="tier-feature included">🧾 Receipt Validation (&lt;60 sec)</li>
             <li class="tier-feature included">📊 First-Party Data Capture (email, phone, SKU, store, date)</li>
@@ -932,12 +955,20 @@
             <li class="tier-feature included">🎯 Creator-Level Attribution (UTM to purchase)</li>
             <li class="tier-feature included">📈 Competitive Intelligence + Promo Timing</li>
             <li class="tier-feature included">🔄 Retail-Agnostic Loyalty (punch cards, cashback)</li>
+            <li class="tier-feature included">🤖 AI Strategy Engine — 24/7 campaign optimization, offer recommendations, and performance insights powered by Aisle's proprietary LLM</li>
           </ul>
         </div>
       </div>
       <div class="pricing-card-footer">
         <div class="pricing-card-aov-note">
           Built for high-AOV brands. At $55–60 per transaction, $0.80 per redemption is a fraction of the per-sale economics — and far below any % fee model.
+        </div>
+        <div class="pricing-card-ai-callout">
+          <div class="pricing-card-ai-icon">🤖</div>
+          <div>
+            <div class="pricing-card-ai-title">AI Strategy Engine — Included</div>
+            <div class="pricing-card-ai-desc">Aisle's proprietary LLM monitors your program 24/7 — surfacing offer optimizations, promo timing windows, inventory signals, and campaign recommendations in real time. Not a dashboard you check. An always-on strategist built into your program.</div>
+          </div>
         </div>
         <a href="https://gotoaisle.com" target="_blank" rel="noopener noreferrer" class="tier-cta tier-cta-primary" style="max-width:280px;margin:0 auto;">Create Your Account →</a>
       </div>
