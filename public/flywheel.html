@@ -334,6 +334,67 @@
     opacity: 0.25;
   }
 
+  /* STRATEGY SECTION */
+  .strategy-section {
+    padding: 80px 24px;
+    background-color: var(--charcoal);
+    text-align: center;
+  }
+  .strategy-section .section-eyebrow { color: var(--gold); }
+  .strategy-section .section-h2 { color: #FAF7F4; }
+  .strategy-section .section-sub { color: #FAF7F4; opacity: 0.45; }
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 48px auto 0;
+    text-align: left;
+  }
+  .strategy-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px 28px;
+  }
+  .strategy-card-featured {
+    background: rgba(196,98,107,0.12);
+    border-color: rgba(196,98,107,0.3);
+  }
+  .strategy-card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .strategy-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FAF7F4;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .strategy-card-desc {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #FAF7F4;
+    opacity: 0.55;
+    margin-bottom: 20px;
+  }
+  .strategy-card-highlight {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--rose);
+    background: rgba(196,98,107,0.12);
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+  }
+
   /* PRICING SECTION */
   .pricing-section {
     padding: 80px 24px;
@@ -621,6 +682,53 @@
     <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">7</div><div class="stage-legend-label">Instant Incentive</div></div>
     <div class="stage-legend-item"><div class="stage-legend-num" style="color:#2D2D2D">8</div><div class="stage-legend-label">First-Party Data</div></div>
     <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">9</div><div class="stage-legend-label">Retargeting Loop</div></div>
+  </div>
+</section>
+
+<!-- STRATEGIC ADVANTAGES -->
+<section class="strategy-section">
+  <p class="section-eyebrow" style="color:var(--rose)">Why MAËLYS Wins</p>
+  <h2 class="section-h2" style="color:var(--charcoal)">The Strategic Edge</h2>
+  <p class="section-sub">Four capabilities most brands don't have — and their competitors don't either.</p>
+
+  <div class="strategy-grid">
+
+    <div class="strategy-card strategy-card-featured">
+      <div class="strategy-card-tag">Competitive Intelligence</div>
+      <h3 class="strategy-card-title">Strike When Competitors Go Off Promo</h3>
+      <p class="strategy-card-desc">
+        Aisle tracks competitor promotions across your retailer footprint — by SKU, region, and store. The moment a rival body care brand ends their Ulta promo, you know. Run your offer in that window and capture the shoppers who were priced out of their brand — before anyone else moves.
+      </p>
+      <div class="strategy-card-highlight">📍 Regional promo gaps → instant market share capture</div>
+    </div>
+
+    <div class="strategy-card">
+      <div class="strategy-card-tag">Inventory Intelligence</div>
+      <h3 class="strategy-card-title">Real-Time Stock Updates</h3>
+      <p class="strategy-card-desc">
+        Know exactly which SKUs are in stock at which stores — before your customer finds out they're not. The store locator shows live inventory, not stale data. Out-of-stock at the nearest Ulta? The system routes them to the next closest store with B-FLAT available.
+      </p>
+      <div class="strategy-card-highlight">🛒 No dead ends. No lost sales.</div>
+    </div>
+
+    <div class="strategy-card">
+      <div class="strategy-card-tag">Online Fallback</div>
+      <h3 class="strategy-card-title">Can't Find It? Buy It Online</h3>
+      <p class="strategy-card-desc">
+        If a customer can't find their SKU in store, Aisle doesn't let the conversion die. The experience surfaces an online purchase option — DTC or Amazon — so the intent you drove never goes to waste. Every touchpoint is a sale.
+      </p>
+      <div class="strategy-card-highlight">🔗 Retail intent → online conversion fallback</div>
+    </div>
+
+    <div class="strategy-card">
+      <div class="strategy-card-tag">Maximum Reach</div>
+      <h3 class="strategy-card-title">Casting the Widest Loop</h3>
+      <p class="strategy-card-desc">
+        TikTok Shop, DTC, Ulta, Ulta at Target, Shoppers Drug Mart, Amazon — Aisle connects all of them into one continuous loop. A customer who converts on TikTok Shop becomes a retargetable audience for Ulta. A receipt at Shoppers feeds your Meta lookalikes. Every channel makes every other channel smarter.
+      </p>
+      <div class="strategy-card-highlight">🔄 Every channel amplifies every other</div>
+    </div>
+
   </div>
 </section>
 
