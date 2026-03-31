@@ -334,108 +334,141 @@
     opacity: 0.25;
   }
 
-  /* TIER CARDS */
-  .tier-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    max-width: 960px;
-    margin: 48px auto 32px;
+  /* PRICING CARD */
+  .pricing-card-wrap {
+    max-width: 900px;
+    margin: 48px auto 0;
+  }
+  .pricing-card-main {
+    background: white;
+    border-radius: 24px;
+    border: 1.5px solid rgba(196,98,107,0.2);
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(196,98,107,0.1);
     text-align: left;
   }
-  .tier-card {
-    background: white;
-    border-radius: 20px;
-    padding: 36px 28px;
-    border: 1.5px solid rgba(196,98,107,0.12);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  .tier-card-featured {
-    border-color: var(--rose);
-    box-shadow: 0 8px 40px rgba(196,98,107,0.12);
-  }
-  .tier-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
+  .pricing-card-badge {
     background: var(--rose);
     color: white;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 24px;
+  }
+  .pricing-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  @media (max-width: 680px) {
+    .pricing-card-body { grid-template-columns: 1fr; }
+  }
+  .pricing-card-left {
+    padding: 36px 32px;
+    border-right: 1px solid rgba(196,98,107,0.1);
+  }
+  .pricing-card-right {
+    padding: 36px 32px;
+  }
+  .pricing-card-label {
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 4px 14px;
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-  .tier-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--charcoal);
+    color: var(--gold);
     margin-bottom: 6px;
   }
-  .tier-tagline {
-    font-size: 13px;
-    color: var(--charcoal);
-    opacity: 0.55;
-    margin-bottom: 12px;
-  }
-  .tier-speed {
-    font-size: 12px;
-    font-weight: 500;
+  .pricing-card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
     color: var(--rose);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .pricing-card-unit {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.7;
+  }
+  .pricing-card-sub {
+    font-size: 12px;
+    color: var(--charcoal);
+    opacity: 0.5;
     margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(196,98,107,0.1);
+    line-height: 1.5;
+  }
+  .pricing-card-plus {
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+  .pricing-card-commitment {
+    display: inline-block;
+    background: rgba(196,98,107,0.08);
+    color: var(--rose);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-top: 4px;
+  }
+  .pricing-card-includes-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.4;
+    margin-bottom: 16px;
   }
   .tier-features {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 9px;
-    flex-grow: 1;
-    margin-bottom: 28px;
   }
   .tier-feature {
     font-size: 13px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
+    line-height: 1.4;
   }
   .tier-feature.included { color: var(--charcoal); }
-  .tier-feature.not-included { color: var(--charcoal); opacity: 0.3; text-decoration: line-through; }
-  .tier-cta-wrap { margin-top: auto; }
+  .pricing-card-footer {
+    padding: 24px 32px 36px;
+    border-top: 1px solid rgba(196,98,107,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pricing-card-aov-note {
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.5;
+    line-height: 1.6;
+    max-width: 600px;
+  }
   .tier-cta {
     display: block;
-    width: 100%;
     text-align: center;
-    padding: 12px 20px;
+    padding: 14px 32px;
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     transition: opacity 0.2s;
+    letter-spacing: 0.02em;
   }
   .tier-cta:hover { opacity: 0.85; }
   .tier-cta-primary { background: var(--rose); color: white; }
-  .tier-cta-outline { border: 1.5px solid var(--rose); color: var(--rose); }
-  .pricing-note {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 13px;
-    color: var(--charcoal);
-    opacity: 0.6;
-    line-height: 1.7;
-    padding: 24px 32px;
-    background: rgba(196,98,107,0.05);
-    border-radius: 16px;
-    text-align: left;
-  }
-  .pricing-note strong { opacity: 1; color: var(--charcoal); }
 
   /* STRATEGY SECTION */
   .strategy-section {
@@ -873,73 +906,42 @@
   <h2 class="section-h2" style="color:var(--charcoal)">Pick Your Program</h2>
   <p class="section-sub">Flat fee per verified transaction. No % of revenue. Predictable economics at $55–60 AOV.</p>
 
-  <!-- Tier cards -->
-  <div class="tier-grid">
-
-    <div class="tier-card">
-      <div class="tier-name">Starter</div>
-      <div class="tier-tagline">One retailer. Prove the model.</div>
-      <div class="tier-speed">⚡ Live in 1 week</div>
-      <ul class="tier-features">
-        <li class="tier-feature included">🗺️ Store Locator (1 retailer)</li>
-        <li class="tier-feature included">📱 SMS Opt-In</li>
-        <li class="tier-feature included">🌐 Branded Landing Page</li>
-        <li class="tier-feature included">🧾 Receipt Validation</li>
-        <li class="tier-feature included">📊 First-Party Data Capture</li>
-        <li class="tier-feature not-included">Meta / TikTok Retargeting Sync</li>
-        <li class="tier-feature not-included">Competitive Intelligence</li>
-        <li class="tier-feature not-included">Multi-retailer Loyalty</li>
-      </ul>
-      <div class="tier-cta-wrap">
-        <a href="https://gotoaisle.com" target="_blank" class="tier-cta tier-cta-outline">Start Here →</a>
+  <!-- Pricing card -->
+  <div class="pricing-card-wrap">
+    <div class="pricing-card-main">
+      <div class="pricing-card-badge">MAËLYS Partnership Pricing</div>
+      <div class="pricing-card-body">
+        <div class="pricing-card-left">
+          <div class="pricing-card-label">Platform Fee</div>
+          <div class="pricing-card-price">$5,000<span class="pricing-card-unit">/mo</span></div>
+          <div class="pricing-card-sub">Full platform access. Everything below included.</div>
+          <div class="pricing-card-plus">+</div>
+          <div class="pricing-card-label">Per Redemption</div>
+          <div class="pricing-card-price">$0.80<span class="pricing-card-unit"> per verified redemption</span></div>
+          <div class="pricing-card-sub">Any rebate amount. Flat rate — not % of transaction value.</div>
+          <div class="pricing-card-commitment">6-month minimum commitment</div>
+        </div>
+        <div class="pricing-card-right">
+          <div class="pricing-card-includes-label">What's included</div>
+          <ul class="tier-features">
+            <li class="tier-feature included">🗺️ Store Locator — all retailers (Ulta, Shoppers, Target, Amazon)</li>
+            <li class="tier-feature included">📱 SMS Opt-In + Branded Landing Pages</li>
+            <li class="tier-feature included">🧾 Receipt Validation (&lt;60 sec)</li>
+            <li class="tier-feature included">📊 First-Party Data Capture (email, phone, SKU, store, date)</li>
+            <li class="tier-feature included">📲 Meta + TikTok Retargeting Sync</li>
+            <li class="tier-feature included">🎯 Creator-Level Attribution (UTM to purchase)</li>
+            <li class="tier-feature included">📈 Competitive Intelligence + Promo Timing</li>
+            <li class="tier-feature included">🔄 Retail-Agnostic Loyalty (punch cards, cashback)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricing-card-footer">
+        <div class="pricing-card-aov-note">
+          Built for high-AOV brands. At $55–60 per transaction, $0.80 per redemption is a fraction of the per-sale economics — and far below any % fee model.
+        </div>
+        <a href="https://gotoaisle.com" target="_blank" rel="noopener noreferrer" class="tier-cta tier-cta-primary" style="max-width:280px;margin:0 auto;">Create Your Account →</a>
       </div>
     </div>
-
-    <div class="tier-card tier-card-featured">
-      <div class="tier-badge">Most Popular</div>
-      <div class="tier-name">Growth</div>
-      <div class="tier-tagline">All retailers. Full attribution stack.</div>
-      <div class="tier-speed">⚡ Live in under 2 weeks</div>
-      <ul class="tier-features">
-        <li class="tier-feature included">🗺️ Store Locator (all retailers)</li>
-        <li class="tier-feature included">📱 SMS Opt-In</li>
-        <li class="tier-feature included">🌐 Branded Landing Pages</li>
-        <li class="tier-feature included">🧾 Receipt Validation</li>
-        <li class="tier-feature included">📊 First-Party Data Capture</li>
-        <li class="tier-feature included">📲 Meta + TikTok Retargeting Sync</li>
-        <li class="tier-feature included">🎯 Creator-Level Attribution</li>
-        <li class="tier-feature not-included">Competitive Intelligence</li>
-      </ul>
-      <div class="tier-cta-wrap">
-        <a href="https://gotoaisle.com" target="_blank" class="tier-cta tier-cta-primary">Get Started →</a>
-      </div>
-    </div>
-
-    <div class="tier-card">
-      <div class="tier-name">Enterprise</div>
-      <div class="tier-tagline">Full intelligence layer. Widest loop.</div>
-      <div class="tier-speed">⚡ Live in under 2 weeks</div>
-      <ul class="tier-features">
-        <li class="tier-feature included">🗺️ Store Locator (all retailers)</li>
-        <li class="tier-feature included">📱 SMS Opt-In</li>
-        <li class="tier-feature included">🌐 Branded Landing Pages</li>
-        <li class="tier-feature included">🧾 Receipt Validation</li>
-        <li class="tier-feature included">📊 First-Party Data Capture</li>
-        <li class="tier-feature included">📲 Meta + TikTok Retargeting Sync</li>
-        <li class="tier-feature included">🎯 Creator-Level Attribution</li>
-        <li class="tier-feature included">📈 Competitive Intelligence</li>
-      </ul>
-      <div class="tier-cta-wrap">
-        <a href="mailto:hello@gotoaisle.com" class="tier-cta tier-cta-outline">Talk to Sales →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Pricing model note -->
-  <div class="pricing-note">
-    <strong>Pricing model:</strong> Flat fee per verified transaction — not % of revenue. Volume tiers available as the program scales. Pilot pricing on initial retailer launch. No long-term lock-in.
-    <br><a href="mailto:hello@gotoaisle.com" style="color:var(--rose);text-decoration:none;font-weight:500;margin-top:8px;display:inline-block">Get your custom proposal → hello@gotoaisle.com</a>
   </div>
 </section>
 
