@@ -436,6 +436,184 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PRICING */}
+      <section
+        className="px-6 py-20"
+        style={{
+          background: "linear-gradient(135deg, #F9EFE8 0%, #FAF7F4 100%)",
+        }}
+      >
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-14">
+            <p
+              className="text-xs tracking-[0.4em] uppercase mb-3"
+              style={{ color: "#C4626B", fontFamily: "var(--font-inter)" }}
+            >
+              Simple Pricing
+            </p>
+            <h2
+              className="text-4xl font-bold"
+              style={{ fontFamily: "var(--font-playfair)", color: "#2D2D2D" }}
+            >
+              Start Growing. Pay for What Works.
+            </h2>
+            <p className="mt-4 text-base opacity-60" style={{ fontFamily: "var(--font-inter)" }}>
+              No hidden fees. No revenue share. Full platform access from Day 1.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+            {/* MTM Plan */}
+            <div
+              className="rounded-3xl p-10 border-2 flex flex-col"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.85)",
+                borderColor: "#C4626B",
+                backdropFilter: "blur(10px)",
+              }}
+            >
+              <div className="mb-6">
+                <p
+                  className="text-xs tracking-[0.3em] uppercase mb-2 opacity-50"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  Flexible
+                </p>
+                <div className="flex items-end gap-2 mb-1">
+                  <span
+                    className="text-5xl font-bold"
+                    style={{ fontFamily: "var(--font-playfair)", color: "#C4626B" }}
+                  >
+                    $499
+                  </span>
+                  <span className="text-base opacity-50 mb-2" style={{ fontFamily: "var(--font-inter)" }}>
+                    / mo
+                  </span>
+                </div>
+                <p className="text-sm opacity-60" style={{ fontFamily: "var(--font-inter)" }}>
+                  Month-to-month · Cancel anytime
+                </p>
+              </div>
+
+              <div className="flex-1">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-4 opacity-40" style={{ fontFamily: "var(--font-inter)" }}>
+                  Everything included
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "SMS opt-in & campaigns",
+                    "First-party data capture",
+                    "Unlimited campaigns",
+                    "Geo-targeted offers",
+                    "Branded landing pages",
+                    "Surveys & reviews",
+                    "Community engagement",
+                    "Dedicated brand support",
+                    "Store locator widget",
+                    "Receipt-validated redemptions",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+                      <span style={{ color: "#C4626B" }}>✓</span>
+                      <span style={{ opacity: 0.75 }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* 3-Month Plan */}
+            <div
+              className="rounded-3xl p-10 flex flex-col relative overflow-hidden"
+              style={{
+                backgroundColor: "#2D2D2D",
+                border: "2px solid #C9A96E",
+              }}
+            >
+              {/* Best value badge */}
+              <div
+                className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full"
+                style={{
+                  backgroundColor: "#C9A96E",
+                  color: "#2D2D2D",
+                  fontFamily: "var(--font-inter)",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                BEST VALUE
+              </div>
+
+              <div className="mb-6">
+                <p
+                  className="text-xs tracking-[0.3em] uppercase mb-2"
+                  style={{ fontFamily: "var(--font-inter)", color: "#C9A96E", opacity: 0.7 }}
+                >
+                  Committed
+                </p>
+                <div className="flex items-end gap-2 mb-1">
+                  <span
+                    className="text-5xl font-bold"
+                    style={{ fontFamily: "var(--font-playfair)", color: "#C9A96E" }}
+                  >
+                    $199
+                  </span>
+                  <span className="text-base mb-2" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.5 }}>
+                    / mo
+                  </span>
+                </div>
+                <p className="text-sm" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.5 }}>
+                  3-month contract · 60% savings
+                </p>
+              </div>
+
+              <div className="flex-1">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.3 }}>
+                  Everything included
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "SMS opt-in & campaigns",
+                    "First-party data capture",
+                    "Unlimited campaigns",
+                    "Geo-targeted offers",
+                    "Branded landing pages",
+                    "Surveys & reviews",
+                    "Community engagement",
+                    "Dedicated brand support",
+                    "Store locator widget",
+                    "Receipt-validated redemptions",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+                      <span style={{ color: "#C9A96E" }}>✓</span>
+                      <span style={{ color: "#FAF7F4", opacity: 0.75 }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <a
+              href="https://gotoaisle.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-5 rounded-full text-white font-semibold text-lg transition-all hover:opacity-90"
+              style={{
+                backgroundColor: "#C4626B",
+                fontFamily: "var(--font-inter)",
+                letterSpacing: "0.02em",
+              }}
+            >
+              Create Your Account → gotoaisle.com
+            </a>
+            <p className="mt-4 text-sm opacity-40" style={{ fontFamily: "var(--font-inter)" }}>
+              Live in under 2 weeks from account creation.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* NEXT STEPS */}
       <section className="px-6 py-20" style={{ backgroundColor: "#2D2D2D" }}>
         <div className="max-w-3xl mx-auto">
