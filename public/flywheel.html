@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aisle × MAËLYS | Retail Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush: #F4C8C8;
+    --rose: #C4626B;
+    --cream: #FAF7F4;
+    --charcoal: #2D2D2D;
+    --gold: #C9A96E;
+    --dark: #1A1A1A;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 96px 24px;
+    text-align: center;
+    background: linear-gradient(135deg, #F4C8C8 0%, #FAF7F4 55%, #F9EFE8 100%);
+  }
+  .hero-lockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .hero-brand {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .brand-maelys { color: var(--rose); }
+  .brand-aisle { color: var(--gold); }
+  .hero-divider { width: 32px; height: 1px; background-color: var(--gold); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 span { color: var(--rose); }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--charcoal);
+    opacity: 0.65;
+    margin-bottom: 36px;
+    letter-spacing: 0.03em;
+  }
+  .hero-sub .dot { color: var(--gold); margin: 0 8px; }
+  .hero-retailers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.45;
+  }
+  .hero-retailers span.sep { color: var(--gold); }
+  .hero-blob-1 {
+    position: absolute;
+    top: 40px; left: 40px;
+    width: 128px; height: 128px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--rose), transparent);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .hero-blob-2 {
+    position: absolute;
+    bottom: 40px; right: 40px;
+    width: 192px; height: 192px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold), transparent);
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  /* PROBLEM STRIP */
+  .problem {
+    padding: 64px 24px;
+    background-color: var(--charcoal);
+    text-align: center;
+  }
+  .problem blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    line-height: 1.6;
+    color: #FAF7F4;
+    max-width: 720px;
+    margin: 0 auto 32px;
+  }
+  .problem-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .problem-label-line { width: 64px; height: 1px; background: var(--gold); }
+
+  /* FLYWHEEL SECTION */
+  .flywheel-section {
+    padding: 80px 24px;
+    background-color: var(--cream);
+    text-align: center;
+  }
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 12px;
+  }
+  .section-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+  .section-sub {
+    font-size: 16px;
+    opacity: 0.55;
+    margin-bottom: 48px;
+  }
+  .flywheel-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 24px 0;
+  }
+  .ring-outer {
+    position: absolute;
+    width: 560px; height: 560px;
+    border-radius: 50%;
+    border: 2px dashed var(--rose);
+    opacity: 0.2;
+    animation: spin-slow 25s linear infinite;
+  }
+  .ring-inner {
+    position: absolute;
+    width: 440px; height: 440px;
+    border-radius: 50%;
+    border: 1px dotted var(--gold);
+    opacity: 0.12;
+    animation: spin-reverse 30s linear infinite;
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+  .flywheel-svg { position: relative; z-index: 2; max-width: 100%; height: auto; }
+
+  /* Stage legend */
+  .stage-legend {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+    margin-top: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stage-legend-item { text-align: center; }
+  .stage-legend-num {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .stage-legend-label {
+    font-size: 9px;
+    opacity: 0.55;
+    line-height: 1.3;
+  }
+  @media (max-width: 600px) {
+    .stage-legend { grid-template-columns: repeat(3, 1fr); }
+    .ring-outer { width: 320px; height: 320px; }
+    .ring-inner { width: 260px; height: 260px; }
+  }
+
+  /* STATS */
+  .stats-section {
+    padding: 80px 24px;
+    background: linear-gradient(135deg, #F4C8C8 0%, #F9EFE8 100%);
+    text-align: center;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    max-width: 900px;
+    margin: 48px auto 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--rose);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* RETAILERS */
+  .retailers-section {
+    padding: 64px 24px;
+    background-color: var(--cream);
+    text-align: center;
+  }
+  .retailers-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 32px;
+  }
+  .retailer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .badge {
+    padding: 8px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--rose);
+    color: var(--rose);
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+  }
+
+  /* NEXT STEPS */
+  .next-steps {
+    padding: 80px 24px;
+    background-color: var(--charcoal);
+    text-align: center;
+  }
+  .next-steps .section-eyebrow { color: var(--gold); }
+  .next-steps .section-h2 { color: #FAF7F4; }
+  .steps-list {
+    max-width: 640px;
+    margin: 64px auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .step { display: flex; gap: 24px; align-items: flex-start; }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.35;
+    min-width: 56px;
+    line-height: 1;
+  }
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #FAF7F4;
+    margin-bottom: 8px;
+  }
+  .step-desc {
+    font-size: 14px;
+    color: #FAF7F4;
+    opacity: 0.5;
+    line-height: 1.6;
+  }
+  .cta-wrap { text-align: center; }
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 999px;
+    background-color: var(--rose);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.88; }
+  .cta-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #FAF7F4;
+    opacity: 0.25;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 28px 24px;
+    background-color: var(--dark);
+    text-align: center;
+    font-size: 11px;
+    color: #FAF7F4;
+    opacity: 0.45;
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+  <div class="hero-lockup">
+    <span class="hero-brand brand-maelys">MAËLYS</span>
+    <div class="hero-divider"></div>
+    <span class="hero-brand brand-aisle">AISLE</span>
+  </div>
+  <h1>The Retail Intelligence Layer<br><span>for MAËLYS</span></h1>
+  <p class="hero-sub">Convert.<span class="dot">·</span>Attribute.<span class="dot">·</span>Retain.<span class="dot">·</span>At every store, every shelf.</p>
+  <div class="hero-retailers">
+    <span>TikTok Shop</span><span class="sep">·</span>
+    <span>Ulta Beauty</span><span class="sep">·</span>
+    <span>Ulta at Target</span><span class="sep">·</span>
+    <span>Shoppers Drug Mart</span><span class="sep">·</span>
+    <span>Amazon</span>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <blockquote>"Your TikTok creators drive massive awareness. But there's no way to know which buyers walk into Ulta and buy B-FLAT off the shelf."</blockquote>
+  <div class="problem-label">
+    <div class="problem-label-line"></div>
+    <span>That's the problem Aisle solves</span>
+    <div class="problem-label-line"></div>
+  </div>
+</section>
+
+<!-- FLYWHEEL -->
+<section class="flywheel-section">
+  <p class="section-eyebrow">The Aisle Flywheel</p>
+  <h2 class="section-h2">Every Purchase Fuels the Next</h2>
+  <p class="section-sub">9 stages. One continuous loop. Zero data left on the table.</p>
+
+  <div class="flywheel-wrap">
+    <div class="ring-outer"></div>
+    <div class="ring-inner"></div>
+    <svg class="flywheel-svg" viewBox="0 0 600 600" width="560" height="560">
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#C4626B" opacity="0.65"/>
+        </marker>
+        <radialGradient id="cg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#F4C8C8" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#FAF7F4" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Center glow -->
+      <circle cx="300" cy="300" r="105" fill="url(#cg)"/>
+
+      <!-- Arrows (quadratic bezier between nodes) -->
+      <path d="M 300 128 Q 359 138 411 168" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 411 168 Q 449 214 469 270" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 469 270 Q 469 330 449 386" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 449 386 Q 411 432 359 462" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 359 462 Q 300 472 241 462" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 241 462 Q 189 432 151 386" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 151 386 Q 131 330 131 270" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 131 270 Q 151 214 189 168" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+      <path d="M 189 168 Q 241 138 300 128" fill="none" stroke="#C4626B" stroke-width="1.8" stroke-opacity=".5" marker-end="url(#arr)" stroke-dasharray="6 3"/>
+
+      <!-- Stage 1: Paid/Creator/TikTok (top) -->
+      <g filter="url(#glow)">
+        <circle cx="300" cy="90" r="40" fill="#C4626B" opacity=".92"/>
+        <text x="300" y="82" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">🎯</text>
+        <text x="300" y="96" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Paid / Creator</text>
+        <text x="300" y="107" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">/ TikTok</text>
+        <circle cx="326" cy="62" r="11" fill="#C9A96E"/>
+        <text x="326" y="66" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">1</text>
+      </g>
+
+      <!-- Stage 2: SMS Opt-In (top right) -->
+      <g filter="url(#glow)">
+        <circle cx="435" cy="139" r="40" fill="#2D2D2D" opacity=".92"/>
+        <text x="435" y="131" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">📱</text>
+        <text x="435" y="145" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">SMS</text>
+        <text x="435" y="157" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Opt-In</text>
+        <circle cx="461" cy="111" r="11" fill="#C9A96E"/>
+        <text x="461" y="115" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">2</text>
+      </g>
+
+      <!-- Stage 3: Landing Page (right) -->
+      <g filter="url(#glow)">
+        <circle cx="507" cy="264" r="40" fill="#C4626B" opacity=".92"/>
+        <text x="507" y="256" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">🌐</text>
+        <text x="507" y="270" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Branded</text>
+        <text x="507" y="281" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Landing Page</text>
+        <circle cx="533" cy="236" r="11" fill="#C9A96E"/>
+        <text x="533" y="240" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">3</text>
+      </g>
+
+      <!-- Stage 4: Store Locator (lower right) -->
+      <g filter="url(#glow)">
+        <circle cx="482" cy="405" r="40" fill="#2D2D2D" opacity=".92"/>
+        <text x="482" y="397" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">🗺️</text>
+        <text x="482" y="411" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Store</text>
+        <text x="482" y="422" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Locator</text>
+        <circle cx="508" cy="377" r="11" fill="#C9A96E"/>
+        <text x="508" y="381" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">4</text>
+      </g>
+
+      <!-- Stage 5: In-Store Purchase (bottom right) -->
+      <g filter="url(#glow)">
+        <circle cx="372" cy="497" r="40" fill="#C4626B" opacity=".92"/>
+        <text x="372" y="489" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">🛍️</text>
+        <text x="372" y="503" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">In-Store</text>
+        <text x="372" y="514" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Purchase</text>
+        <circle cx="398" cy="469" r="11" fill="#C9A96E"/>
+        <text x="398" y="473" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">5</text>
+      </g>
+
+      <!-- Stage 6: Receipt Verified (bottom left) -->
+      <g filter="url(#glow)">
+        <circle cx="228" cy="497" r="40" fill="#2D2D2D" opacity=".92"/>
+        <text x="228" y="489" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">🧾</text>
+        <text x="228" y="503" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Receipt</text>
+        <text x="228" y="514" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Verified</text>
+        <circle cx="254" cy="469" r="11" fill="#C9A96E"/>
+        <text x="254" y="473" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">6</text>
+      </g>
+
+      <!-- Stage 7: Instant Incentive (lower left) -->
+      <g filter="url(#glow)">
+        <circle cx="118" cy="405" r="40" fill="#C4626B" opacity=".92"/>
+        <text x="118" y="397" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">✨</text>
+        <text x="118" y="411" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Instant</text>
+        <text x="118" y="422" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Incentive</text>
+        <circle cx="144" cy="377" r="11" fill="#C9A96E"/>
+        <text x="144" y="381" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">7</text>
+      </g>
+
+      <!-- Stage 8: First-Party Data (left) -->
+      <g filter="url(#glow)">
+        <circle cx="93" cy="264" r="40" fill="#2D2D2D" opacity=".92"/>
+        <text x="93" y="256" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">📊</text>
+        <text x="93" y="270" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">First-Party</text>
+        <text x="93" y="281" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Data</text>
+        <circle cx="119" cy="236" r="11" fill="#C9A96E"/>
+        <text x="119" y="240" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">8</text>
+      </g>
+
+      <!-- Stage 9: Retargeting Loop (top left) -->
+      <g filter="url(#glow)">
+        <circle cx="165" cy="139" r="40" fill="#C4626B" opacity=".92"/>
+        <text x="165" y="131" text-anchor="middle" font-size="14" fill="white" font-family="Inter,sans-serif">🔄</text>
+        <text x="165" y="145" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Retargeting</text>
+        <text x="165" y="157" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter,sans-serif" opacity=".9">Loop</text>
+        <circle cx="191" cy="111" r="11" fill="#C9A96E"/>
+        <text x="191" y="115" text-anchor="middle" font-size="9" font-weight="bold" fill="white" font-family="Inter,sans-serif">9</text>
+      </g>
+
+      <!-- Center -->
+      <circle cx="300" cy="300" r="74" fill="#FAF7F4" stroke="#F4C8C8" stroke-width="2"/>
+      <text x="300" y="292" text-anchor="middle" font-size="26" font-weight="bold" fill="#C4626B" font-family="Playfair Display,serif" letter-spacing="3">AISLE</text>
+      <text x="300" y="313" text-anchor="middle" font-size="7.5" fill="#2D2D2D" font-family="Inter,sans-serif" opacity="0.5" letter-spacing="2.5">RETAIL INTELLIGENCE</text>
+    </svg>
+  </div>
+
+  <div class="stage-legend">
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">1</div><div class="stage-legend-label">Paid & Creator</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#2D2D2D">2</div><div class="stage-legend-label">SMS Opt-In</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">3</div><div class="stage-legend-label">Landing Page</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#2D2D2D">4</div><div class="stage-legend-label">Store Locator</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">5</div><div class="stage-legend-label">In-Store Purchase</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#2D2D2D">6</div><div class="stage-legend-label">Receipt Verified</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">7</div><div class="stage-legend-label">Instant Incentive</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#2D2D2D">8</div><div class="stage-legend-label">First-Party Data</div></div>
+    <div class="stage-legend-item"><div class="stage-legend-num" style="color:#C4626B">9</div><div class="stage-legend-label">Retargeting Loop</div></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <p class="section-eyebrow">What You Get</p>
+  <h2 class="section-h2">Built for Brands at Scale</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">&lt; 60 sec</div>
+      <div class="stat-label">Receipt Validation</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">2,881+</div>
+      <div class="stat-label">Retail Doors Covered</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Brand-Owned Data</div>
+    </div>
+  </div>
+</section>
+
+<!-- RETAILERS -->
+<section class="retailers-section">
+  <p class="retailers-eyebrow">Works across every MAËLYS retail channel</p>
+  <div class="retailer-badges">
+    <span class="badge">Ulta Beauty</span>
+    <span class="badge">Ulta at Target</span>
+    <span class="badge">TikTok Shop</span>
+    <span class="badge">Shoppers Drug Mart</span>
+    <span class="badge">Amazon</span>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="next-steps">
+  <p class="section-eyebrow">What Happens Next</p>
+  <h2 class="section-h2">Live in Under 2 Weeks</h2>
+  <div class="steps-list">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-title">Create Your Account</div>
+        <div class="step-desc">5 minutes at gotoaisle.com — implementation begins immediately</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-title">Onboarding + Implementation</div>
+        <div class="step-desc">Our team configures your store locator, SMS opt-in, and receipt validation flow for MAËLYS — tuned to Ulta, Shoppers, and every door you're in</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-title">Launch</div>
+        <div class="step-desc">Go live across creators, CRM, and social. Verified purchases and first-party data flowing from Day 1</div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-wrap">
+    <a href="https://gotoaisle.com" target="_blank" rel="noopener noreferrer" class="cta-btn">Get Started at gotoaisle.com →</a>
+    <p class="cta-note">The decision is yours. We're ready when you are.</p>
+  </div>
+</section>
+
+<footer>Aisle × MAËLYS &nbsp;|&nbsp; Confidential &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; hello@gotoaisle.com</footer>
+
+</body>
+</html>
