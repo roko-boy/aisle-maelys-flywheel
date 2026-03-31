@@ -436,153 +436,204 @@ export default function Home() {
         </div>
       </section>
 
+      {/* COMPETITIVE STRATEGY */}
+      <section className="px-6 py-20" style={{ backgroundColor: "#FAF7F4" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p
+              className="text-xs tracking-[0.4em] uppercase mb-3"
+              style={{ color: "#C4626B", fontFamily: "var(--font-inter)" }}
+            >
+              Competitive Strategy
+            </p>
+            <h2
+              className="text-4xl font-bold mb-4"
+              style={{ fontFamily: "var(--font-playfair)", color: "#1A1A1A" }}
+            >
+              Own Every Moment — Especially Your Competitors&apos;
+            </h2>
+            <p className="text-base max-w-2xl mx-auto" style={{ color: "#1A1A1A", opacity: 0.6, fontFamily: "var(--font-inter)" }}>
+              Aisle gives MAËLYS real-time competitive intelligence and the tools to move faster than any brand on shelf.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {[
+              {
+                icon: "🎯",
+                title: "Strike When Competitors Go Dark",
+                body: "Aisle inventory data tracks competitor stock across every Ulta door in real time. When a rival SKU goes out of stock, Aisle triggers targeted outreach to known shoppers — capturing the shelf gap before it closes.",
+              },
+              {
+                icon: "📦",
+                title: "Real-Time Inventory Visibility",
+                body: "See exactly which SKUs are in-stock or OOS at every retail door, updated continuously. No more flying blind on retail execution — you'll know before your rep does.",
+              },
+              {
+                icon: "🌐",
+                title: "Online When Stores Are Out",
+                body: "If a shopper can't find MAËLYS in-store, Aisle surfaces your TikTok Shop, Amazon, or DTC option immediately — turning a missed sale into a captured customer.",
+              },
+              {
+                icon: "🔁",
+                title: "Cast the Widest Loop",
+                body: "Paid media, creator content, CRM, SMS, in-store, online — every channel connected and attributed in one loop. MAËLYS doesn't have to choose a channel. Aisle runs them all.",
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="p-8 rounded-2xl border"
+                style={{ borderColor: "#E8DDD4", backgroundColor: "#FFFFFF" }}
+              >
+                <div className="text-3xl mb-4">{card.icon}</div>
+                <h3
+                  className="text-xl font-semibold mb-3"
+                  style={{ fontFamily: "var(--font-playfair)", color: "#1A1A1A" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#1A1A1A", opacity: 0.6, fontFamily: "var(--font-inter)" }}>
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center gap-4 flex-wrap justify-center">
+              {["Review the strategy", "Agree on scope", "Launch in under 2 weeks"].map((step, i, arr) => (
+                <div key={step} className="flex items-center gap-4">
+                  <span
+                    className="text-sm font-semibold tracking-wide"
+                    style={{ color: "#C4626B", fontFamily: "var(--font-inter)" }}
+                  >
+                    {step}
+                  </span>
+                  {i < arr.length - 1 && (
+                    <span style={{ color: "#C9A96E", fontSize: "1.2rem" }}>→</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section
         className="px-6 py-20"
-        style={{
-          background: "linear-gradient(135deg, #F9EFE8 0%, #FAF7F4 100%)",
-        }}
+        style={{ backgroundColor: "#1A1A1A" }}
       >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <p
               className="text-xs tracking-[0.4em] uppercase mb-3"
-              style={{ color: "#C4626B", fontFamily: "var(--font-inter)" }}
+              style={{ color: "#C9A96E", fontFamily: "var(--font-inter)" }}
             >
-              Simple Pricing
+              Investment
             </p>
             <h2
               className="text-4xl font-bold"
-              style={{ fontFamily: "var(--font-playfair)", color: "#2D2D2D" }}
+              style={{ fontFamily: "var(--font-playfair)", color: "#FAF7F4" }}
             >
-              Start Growing. Pay for What Works.
+              Straightforward Pricing for Premium Brands
             </h2>
-            <p className="mt-4 text-base opacity-60" style={{ fontFamily: "var(--font-inter)" }}>
-              No hidden fees. No revenue share. Full platform access from Day 1.
+            <p className="mt-4 text-base" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.5 }}>
+              No percentage-of-sales model. No surprises. Fixed costs that scale with your success.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
-            {/* MTM Plan */}
+            {/* Standard */}
             <div
-              className="rounded-3xl p-10 border-2 flex flex-col"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.85)",
-                borderColor: "#C4626B",
-                backdropFilter: "blur(10px)",
-              }}
+              className="rounded-3xl p-10 border flex flex-col"
+              style={{ backgroundColor: "#2D2D2D", borderColor: "#333333" }}
             >
               <div className="mb-6">
                 <p
-                  className="text-xs tracking-[0.3em] uppercase mb-2 opacity-50"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  className="text-xs tracking-[0.3em] uppercase mb-2"
+                  style={{ fontFamily: "var(--font-inter)", color: "#C9A96E", opacity: 0.7 }}
                 >
-                  Flexible
+                  Standard
                 </p>
                 <div className="flex items-end gap-2 mb-1">
                   <span
                     className="text-5xl font-bold"
-                    style={{ fontFamily: "var(--font-playfair)", color: "#C4626B" }}
+                    style={{ fontFamily: "var(--font-playfair)", color: "#FAF7F4" }}
                   >
                     $499
                   </span>
-                  <span className="text-base opacity-50 mb-2" style={{ fontFamily: "var(--font-inter)" }}>
+                  <span className="text-base mb-2" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.5 }}>
                     / mo
                   </span>
                 </div>
-                <p className="text-sm opacity-60" style={{ fontFamily: "var(--font-inter)" }}>
-                  Month-to-month · Cancel anytime
+                <p className="text-xs" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.4 }}>
+                  + per-redemption fees
                 </p>
               </div>
-
               <div className="flex-1">
-                <p className="text-xs font-semibold tracking-widest uppercase mb-4 opacity-40" style={{ fontFamily: "var(--font-inter)" }}>
-                  Everything included
-                </p>
                 <ul className="space-y-3">
                   {[
-                    "SMS opt-in & campaigns",
+                    "SMS opt-in + receipt validation",
+                    "Store locator (up to 5,000 locations)",
                     "First-party data capture",
-                    "Unlimited campaigns",
-                    "Geo-targeted offers",
+                    "Campaign analytics dashboard",
                     "Branded landing pages",
-                    "Surveys & reviews",
-                    "Community engagement",
-                    "Dedicated brand support",
-                    "Store locator widget",
-                    "Receipt-validated redemptions",
+                    "Email support",
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+                    <li key={item} className="flex items-start gap-3 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
                       <span style={{ color: "#C4626B" }}>✓</span>
-                      <span style={{ opacity: 0.75 }}>{item}</span>
+                      <span style={{ color: "#FAF7F4", opacity: 0.65 }}>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            {/* 3-Month Plan */}
+            {/* Enterprise */}
             <div
               className="rounded-3xl p-10 flex flex-col relative overflow-hidden"
-              style={{
-                backgroundColor: "#2D2D2D",
-                border: "2px solid #C9A96E",
-              }}
+              style={{ backgroundColor: "#2D2D2D", border: "2px solid #C4626B" }}
             >
-              {/* Best value badge */}
               <div
-                className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full"
-                style={{
-                  backgroundColor: "#C9A96E",
-                  color: "#2D2D2D",
-                  fontFamily: "var(--font-inter)",
-                  letterSpacing: "0.05em",
-                }}
+                className="absolute top-5 right-5 text-xs font-semibold px-3 py-1 rounded-full"
+                style={{ backgroundColor: "#C4626B", color: "#FAF7F4", fontFamily: "var(--font-inter)", letterSpacing: "0.05em" }}
               >
-                BEST VALUE
+                Recommended for MAËLYS
               </div>
-
               <div className="mb-6">
                 <p
                   className="text-xs tracking-[0.3em] uppercase mb-2"
                   style={{ fontFamily: "var(--font-inter)", color: "#C9A96E", opacity: 0.7 }}
                 >
-                  Committed
+                  Enterprise
                 </p>
                 <div className="flex items-end gap-2 mb-1">
                   <span
                     className="text-5xl font-bold"
                     style={{ fontFamily: "var(--font-playfair)", color: "#C9A96E" }}
                   >
-                    $199
+                    $5,000
                   </span>
                   <span className="text-base mb-2" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.5 }}>
                     / mo
                   </span>
                 </div>
-                <p className="text-sm" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.5 }}>
-                  3-month contract · 60% savings
+                <p className="text-xs" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.4 }}>
+                  + $0.70 per verified redemption
                 </p>
               </div>
-
               <div className="flex-1">
-                <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.3 }}>
-                  Everything included
-                </p>
                 <ul className="space-y-3">
                   {[
-                    "SMS opt-in & campaigns",
-                    "First-party data capture",
-                    "Unlimited campaigns",
-                    "Geo-targeted offers",
-                    "Branded landing pages",
-                    "Surveys & reviews",
-                    "Community engagement",
-                    "Dedicated brand support",
-                    "Store locator widget",
-                    "Receipt-validated redemptions",
+                    "Everything in Standard",
+                    "Competitive intelligence + inventory monitoring",
+                    "Dedicated strategy team",
+                    "Custom landing pages + SMS flows",
+                    "Priority support + SLA",
+                    "TikTok Shop → Ulta attribution reporting",
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
+                    <li key={item} className="flex items-start gap-3 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
                       <span style={{ color: "#C9A96E" }}>✓</span>
                       <span style={{ color: "#FAF7F4", opacity: 0.75 }}>{item}</span>
                     </li>
@@ -592,23 +643,21 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="text-center">
+          <div className="text-center space-y-5">
+            <p className="text-sm max-w-2xl mx-auto" style={{ fontFamily: "var(--font-inter)", color: "#FAF7F4", opacity: 0.45, lineHeight: "1.8" }}>
+              Given MAËLYS&apos;s $55+ AOV and multi-channel distribution, Enterprise delivers the attribution infrastructure and competitive intelligence needed to connect creator content to retail sales — at a fraction of what traditional shopper marketing agencies charge.
+            </p>
             <a
               href="https://gotoaisle.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-12 py-5 rounded-full text-white font-semibold text-lg transition-all hover:opacity-90"
-              style={{
-                backgroundColor: "#C4626B",
-                fontFamily: "var(--font-inter)",
-                letterSpacing: "0.02em",
-              }}
+              className="inline-block px-12 py-5 rounded-full font-semibold text-lg transition-all hover:opacity-90"
+              style={{ backgroundColor: "#C4626B", color: "#FAF7F4", fontFamily: "var(--font-inter)", letterSpacing: "0.02em" }}
             >
               Create Your Account → gotoaisle.com
             </a>
-            <p className="mt-4 text-sm opacity-40" style={{ fontFamily: "var(--font-inter)" }}>
-              Live in under 2 weeks from account creation.
+            <p className="text-xs" style={{ color: "#FAF7F4", opacity: 0.25, fontFamily: "var(--font-inter)" }}>
+              Average Enterprise brand sees 2.4× return within 90 days
             </p>
           </div>
         </div>
