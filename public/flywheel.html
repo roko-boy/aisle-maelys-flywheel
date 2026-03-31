@@ -334,6 +334,109 @@
     opacity: 0.25;
   }
 
+  /* TIER CARDS */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 48px auto 32px;
+    text-align: left;
+  }
+  .tier-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 28px;
+    border: 1.5px solid rgba(196,98,107,0.12);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .tier-card-featured {
+    border-color: var(--rose);
+    box-shadow: 0 8px 40px rgba(196,98,107,0.12);
+  }
+  .tier-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rose);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .tier-tagline {
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.55;
+    margin-bottom: 12px;
+  }
+  .tier-speed {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--rose);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(196,98,107,0.1);
+  }
+  .tier-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex-grow: 1;
+    margin-bottom: 28px;
+  }
+  .tier-feature {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tier-feature.included { color: var(--charcoal); }
+  .tier-feature.not-included { color: var(--charcoal); opacity: 0.3; text-decoration: line-through; }
+  .tier-cta-wrap { margin-top: auto; }
+  .tier-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .tier-cta:hover { opacity: 0.85; }
+  .tier-cta-primary { background: var(--rose); color: white; }
+  .tier-cta-outline { border: 1.5px solid var(--rose); color: var(--rose); }
+  .pricing-note {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.6;
+    line-height: 1.7;
+    padding: 24px 32px;
+    background: rgba(196,98,107,0.05);
+    border-radius: 16px;
+    text-align: left;
+  }
+  .pricing-note strong { opacity: 1; color: var(--charcoal); }
+
   /* STRATEGY SECTION */
   .strategy-section {
     padding: 80px 24px;
@@ -766,71 +869,77 @@
 
 <!-- WHAT'S INCLUDED + PRICING -->
 <section class="pricing-section">
-  <p class="section-eyebrow" style="color:var(--rose)">What You Get</p>
-  <h2 class="section-h2" style="color:var(--charcoal)">Everything in the Platform</h2>
-  <p class="section-sub">One program. Every tool you need to convert, attribute, and retain at retail.</p>
+  <p class="section-eyebrow" style="color:var(--rose)">Pricing + What You Get</p>
+  <h2 class="section-h2" style="color:var(--charcoal)">Pick Your Program</h2>
+  <p class="section-sub">Flat fee per verified transaction. No % of revenue. Predictable economics at $55–60 AOV.</p>
 
-  <div class="pricing-grid">
-    <!-- Feature cards -->
-    <div class="feature-card">
-      <div class="feature-icon">🌐</div>
-      <div class="feature-title">Branded Landing Pages</div>
-      <div class="feature-desc">MAËLYS-skinned opt-in pages that convert paid, creator, and CRM traffic into SMS subscribers and retail purchasers.</div>
+  <!-- Tier cards -->
+  <div class="tier-grid">
+
+    <div class="tier-card">
+      <div class="tier-name">Starter</div>
+      <div class="tier-tagline">One retailer. Prove the model.</div>
+      <div class="tier-speed">⚡ Live in 1 week</div>
+      <ul class="tier-features">
+        <li class="tier-feature included">🗺️ Store Locator (1 retailer)</li>
+        <li class="tier-feature included">📱 SMS Opt-In</li>
+        <li class="tier-feature included">🌐 Branded Landing Page</li>
+        <li class="tier-feature included">🧾 Receipt Validation</li>
+        <li class="tier-feature included">📊 First-Party Data Capture</li>
+        <li class="tier-feature not-included">Meta / TikTok Retargeting Sync</li>
+        <li class="tier-feature not-included">Competitive Intelligence</li>
+        <li class="tier-feature not-included">Multi-retailer Loyalty</li>
+      </ul>
+      <div class="tier-cta-wrap">
+        <a href="https://gotoaisle.com" target="_blank" class="tier-cta tier-cta-outline">Start Here →</a>
+      </div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🗺️</div>
-      <div class="feature-title">Store Locator + Inventory Intel</div>
-      <div class="feature-desc">Live store locator embedded in your campaigns — shows nearest Ulta/Shoppers with specific SKUs in stock. Powered by real-time scraping + Instacart.</div>
+
+    <div class="tier-card tier-card-featured">
+      <div class="tier-badge">Most Popular</div>
+      <div class="tier-name">Growth</div>
+      <div class="tier-tagline">All retailers. Full attribution stack.</div>
+      <div class="tier-speed">⚡ Live in under 2 weeks</div>
+      <ul class="tier-features">
+        <li class="tier-feature included">🗺️ Store Locator (all retailers)</li>
+        <li class="tier-feature included">📱 SMS Opt-In</li>
+        <li class="tier-feature included">🌐 Branded Landing Pages</li>
+        <li class="tier-feature included">🧾 Receipt Validation</li>
+        <li class="tier-feature included">📊 First-Party Data Capture</li>
+        <li class="tier-feature included">📲 Meta + TikTok Retargeting Sync</li>
+        <li class="tier-feature included">🎯 Creator-Level Attribution</li>
+        <li class="tier-feature not-included">Competitive Intelligence</li>
+      </ul>
+      <div class="tier-cta-wrap">
+        <a href="https://gotoaisle.com" target="_blank" class="tier-cta tier-cta-primary">Get Started →</a>
+      </div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🧾</div>
-      <div class="feature-title">Receipt Validation (&lt;60 sec)</div>
-      <div class="feature-desc">Customers photo their receipt. Verified in under 60 seconds. SKU-level attribution, retailer, store, and date — all captured.</div>
+
+    <div class="tier-card">
+      <div class="tier-name">Enterprise</div>
+      <div class="tier-tagline">Full intelligence layer. Widest loop.</div>
+      <div class="tier-speed">⚡ Live in under 2 weeks</div>
+      <ul class="tier-features">
+        <li class="tier-feature included">🗺️ Store Locator (all retailers)</li>
+        <li class="tier-feature included">📱 SMS Opt-In</li>
+        <li class="tier-feature included">🌐 Branded Landing Pages</li>
+        <li class="tier-feature included">🧾 Receipt Validation</li>
+        <li class="tier-feature included">📊 First-Party Data Capture</li>
+        <li class="tier-feature included">📲 Meta + TikTok Retargeting Sync</li>
+        <li class="tier-feature included">🎯 Creator-Level Attribution</li>
+        <li class="tier-feature included">📈 Competitive Intelligence</li>
+      </ul>
+      <div class="tier-cta-wrap">
+        <a href="mailto:hello@gotoaisle.com" class="tier-cta tier-cta-outline">Talk to Sales →</a>
+      </div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <div class="feature-title">First-Party Data Capture</div>
-      <div class="feature-desc">Every verified purchaser becomes a retargetable audience you own — email, phone, purchase history, SKU, retailer, and store location.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔄</div>
-      <div class="feature-title">Retail-Agnostic Loyalty</div>
-      <div class="feature-desc">Punch cards, cashback, tiered rewards, or instant-win mechanics. Works across all retailers. No app required — SMS only.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <div class="feature-title">Creator Attribution</div>
-      <div class="feature-desc">UTM-level attribution down to the individual creator or ad. Know which TikTok videos actually drove someone into Ulta.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📈</div>
-      <div class="feature-title">Competitive Intelligence</div>
-      <div class="feature-desc">Track competitor promos by SKU, region, and retailer. Time your offers to defensive or offensive windows — before your competition does.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📲</div>
-      <div class="feature-title">Retargeting + Lookalikes</div>
-      <div class="feature-desc">Export verified retail buyer audiences to Meta, TikTok, and Google. Suppress existing customers. Build lookalikes from your best buyers.</div>
-    </div>
+
   </div>
 
-  <!-- Pricing model -->
-  <div class="pricing-model">
-    <div class="pricing-model-inner">
-      <div class="pricing-model-label">Pricing Model</div>
-      <h3 class="pricing-model-title">Flat Fee Per Verified Transaction</h3>
-      <p class="pricing-model-desc">
-        Standard % fee models don't work at $55–60 AOV. Aisle works on a <strong>flat fee per verified transaction</strong>, with tiered volume structures and hybrid options available. Predictable economics that make the math work at MAËLYS volume and margin.
-      </p>
-      <div class="pricing-bullets">
-        <div class="pricing-bullet"><span class="bullet-check">✓</span> No % of revenue — flat per-transaction fee</div>
-        <div class="pricing-bullet"><span class="bullet-check">✓</span> Volume tiers as program scales</div>
-        <div class="pricing-bullet"><span class="bullet-check">✓</span> Hybrid models available (flat + performance)</div>
-        <div class="pricing-bullet"><span class="bullet-check">✓</span> Pilot pricing for first retailer / SKU set</div>
-        <div class="pricing-bullet"><span class="bullet-check">✓</span> No long-term lock-in on initial launch</div>
-      </div>
-      <a href="https://gotoaisle.com" target="_blank" rel="noopener noreferrer" class="pricing-cta-link">Get your custom proposal → hello@gotoaisle.com</a>
-    </div>
+  <!-- Pricing model note -->
+  <div class="pricing-note">
+    <strong>Pricing model:</strong> Flat fee per verified transaction — not % of revenue. Volume tiers available as the program scales. Pilot pricing on initial retailer launch. No long-term lock-in.
+    <br><a href="mailto:hello@gotoaisle.com" style="color:var(--rose);text-decoration:none;font-weight:500;margin-top:8px;display:inline-block">Get your custom proposal → hello@gotoaisle.com</a>
   </div>
 </section>
 
